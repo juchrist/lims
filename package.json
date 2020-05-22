@@ -1,0 +1,13 @@
+{
+  "name": "hello-world",
+  "author": "Juchrist",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "morgan": "^1.8.1",
+    "mysql": "^2.13.0",
+    "pdf-image": "^1.1.0"
+  }
+}

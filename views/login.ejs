@@ -1,0 +1,78 @@
+<% include header %>
+<div class="col col-md3"></div>
+
+  <div class="container">
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#students"><span class="fa fa-graduation-cap"></span>Students Login</a></li>
+      <li><a data-toggle="tab" href="#staffs">Staffs Login</a></li>
+    </ul>
+    <div class="tab-content">
+    <div id="students" class="tab-pane fade in active">
+        <form class="form-signin" method="POST" action="loginController">
+          <label for="inputEmail" class="sr-only">Matric N<u>o</u>s:</label>
+          <input name="student_id" type="text" id="inputEmail" class="form-control" placeholder="Matric Number" required autofocus>
+          <label for="inputPassword" class="sr-only">Password</label>
+          <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+          <!--div class="checkbox">
+            <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+          </div-->
+          <button style="width:500px" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </form>
+      </div>
+      <div id="staffs" class="tab-pane fade">
+      <form class="form-signin"  method="POST" action="loginController?type=staff">
+        <label for="inputEmail" class="sr-only">Staff ID</label>
+        <input name="staff_id" type="text" id="inputEmail" class="form-control" placeholder="Staff ID" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <!--div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div-->
+        <button class="btn btn-lg btn-primary btn-block" type="submit" style="width:500px;">Sign in</button>
+      </form>
+    </li>
+
+  </ul>
+</div>
+
+<div class="col col-md3"></div>
+<style>
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+</style>
+<% include footer %>

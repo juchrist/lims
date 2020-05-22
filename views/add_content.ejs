@@ -1,0 +1,51 @@
+<h3 align="center"><%= menu %></h3>
+
+<section style="margin:2em" class="row text-center placeholders">
+  <div class="container">
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#books"><span class="fa fa-book"></span>Add Book</a></li>
+    <li><a data-toggle="tab" href="#audio_visuals"><span class="fa fa-gallery"></span>Add Audio-Visuals</a></li>
+  </ul>
+<br/>
+  <div class="row">
+    <div class="tab-content">
+    <div id="books" class="tab-pane fade in active">
+      <p style="color:#e25050">* Note: Allowed File Extension Types are .docx, .doc, .ppt, .pptx, .txt, .rtf and .pdf only and maximum file size is 50mb. </p>
+    <form class="form-signin" method="POST" enctype="multipart/form-data" action="add_content/books">
+      <label for="inputEmail" class="sr-only">Matric N<u>o</u>s:</label>
+      <input name="name" type="text" id="inputEmail" class="form-control" placeholder="Name" required><br/>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <textarea name="description" type="text" id="inputEmail" class="form-control" placeholder="Description" required></textarea><br/>
+      <input name="page_number" type="text" id="inputEmail" class="form-control" placeholder="Page Number (If Content is a book)"><br/>
+      <input name="author" type="text" id="inputEmail" class="form-control" placeholder="Author (If Content is a book)"><br/>
+      <input name="yop" type="number" id="inputEmail" class="form-control" placeholder="Year of Publishing/Creation (If Content is a book)" required><br/>
+      <input name="publisher" type="text" id="inputEmail" class="form-control" placeholder="Publisher (If Content is a book)" required><br/>
+      <input name="isbn" type="text" id="inputEmail" class="form-control" placeholder="ISBN (If Content is a book)" required><br/>
+      <input name="content" type="file" id="inputEmail" class="form-control" placeholder="ISBN (If Content is a book)" required><br/>
+
+      <!--div class="checkbox">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div--><br/>
+      <button style="width:500px;" class="btn btn-lg btn-primary btn-block" type="submit">Add</button>
+    </form>
+  </div>
+  <div id="audio_visuals" class="tab-pane fade">
+    <p style="color:#e25050">* Note: Allowed File Extension Types are .mp3 and .mp4 only and maximum file size is 50mb. </p>
+    <form class="form-signin" method="POST" enctype="multipart/form-data" action="add_content/audio_visuals">
+      <label for="inputEmail" class="sr-only">Matric N<u>o</u>s:</label>
+      <input name="name" type="text" id="inputEmail" class="form-control" placeholder="Name" required><br/>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <textarea name="description" type="text" id="inputEmail" class="form-control" placeholder="Description" required></textarea><br/>
+      <input name="content" type="file" id="inputEmail" class="form-control" placeholder="ISBN (If Content is a book)" required><br/>
+
+      <button style="width:500px;" class="btn btn-lg btn-primary btn-block" type="submit">Add</button>
+
+  </div>
+
+</div>
+  </div>
+
+</section>
+<% include footer%>

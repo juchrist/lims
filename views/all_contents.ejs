@@ -1,0 +1,65 @@
+<h1><%= menu %></h1>
+<form class="form-inline mt-2 mt-md-0">
+  <input class="form-control mr-sm-2" type="text" placeholder="Search" onchange="Search(this)">
+  <button class="btn btn-success my-2 my-sm-0" type="submit" onclick="Search(this)">Search</button>
+</form>
+
+<section style="margin:1em" class="row text-center placeholders">
+  <div class="row">
+    <% data.forEach(function(content){ %>
+           <div id="<%= content.name %>" class="card">
+             <a onclick="ViewBook(<%= content.id %>)" >
+             <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+             <h3><%= content.name %></h3>
+             <p class="card-text">
+               <p class="card-text"><%= content.description %></p>
+             </p>
+             </a>
+           </div>
+    <% }) %>
+           <!--div class="card">
+             <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+             <h3>ICT and its Applications</h3>
+             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+           </div>
+           <div class="card">
+             <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+             <h3>College Physics</h3>
+             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+           </div>
+
+           <div class="card">
+             <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+             <h3>Advanced Chemistry for A' Level</h3>
+             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+           </div>
+           <div class="card">
+             <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+             <h3>Communication with the World</h3>
+             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+           </div>
+           <div class="card">
+             <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+             <h3>Engineering Mathematics</h3>
+             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+           </div>
+
+           <div class="card">
+             <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+             <h3>Applied Biology</h3>
+             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+           </div>
+           <div class="card">
+             <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+             <h3>Role of Education to the Society</h3>
+             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+           </div>
+           <div class="card">
+             <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+             <h3>Programming and its Fundamental</h3>
+             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+           </div-->
+         </div>
+
+       </section>
+       <% include footer%>

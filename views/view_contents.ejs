@@ -1,0 +1,101 @@
+<h1><%= menu %></h1>
+<section style="margin:1em" class="row text-center placeholders">
+  <div class="row col-md-12">
+<% data.forEach(function(content){ %>
+    <div style="" class="jumbotrons">
+    <p align="right"><a style="text-decoration:none;" onclick="Home()" href="#">Contents</a> » <?php echo $content->name; ?></a></p>
+  <style>
+  img{
+    margin-right: 1em;
+  }
+/*  p{
+    font-weight:bolder;
+  }*/
+  </style>
+    <div id="review" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+          <h5>Review </h5>
+            <button style="margin-top:1em;" type="button" data-dismiss="modal" class="close" aria-label="Close">
+              <span class="fa fa-times-circle"></span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div id="msg"></div>
+              <!--form align="center" action="#" class="col col-md-12" method="post" -->
+              <!--<label for="">Username</label> -->
+              <div id="result"></div>
+              <textarea class="form form-control" id="reviewy" type="text" name="review"></textarea>
+              <input type="hidden" value="<?php echo $content->name; ?>" id="contenty" />
+<!--          <br/>
+              <label for="">Password</label>
+              <input class="form form-control" type="text" placeholder="6 or more characters" style="font-style:italics;">-->
+          <br/>
+              <p align="right"><button role="button" onclick="AddReview()" class="btn btn-primary"><span class="fa fa-mark"></span> Send Review </button></p>
+          <br/>
+            <!--/form-->
+          </div>
+        </div>
+      </div>
+    </div>  
+    <div id="report" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+          <h5>Report / Flag</h5>
+            <button style="margin-top:1em;" type="button" data-dismiss="modal" class="close" aria-label="Close">
+              <span class="fa fa-times-circle"></span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div id="msgi"></div>
+              <textarea class="form form-control" id="reporty" type="text" name="review" />
+              <input type="hidden" value="<%= content.name %>" id="contentyy" />
+          <br/>
+              <p align="right"><button role="button" onclick="AddReport()" class="btn btn-danger"><span class="fa fa-mark"></span> Send Report </button></p>
+          <br/>
+            <!--/form-->
+          </div>
+        </div>
+      </div>
+    </div>  
+<h2>  <p style="margin-bottom:1em;border-bottom:2px solid #888;padding-bottom:0.2em;" align="center"><%= content.name %></p></h2>
+<div style="" class="col col-md-6">
+<!--img data-holder-rendered="true" src="<?php echo base_url(); ?><?php echo $p->image; ?>" style="width:400px; height:400px;" data-src="holder.js/200x200" class="img-thumbnail" alt="200x200"-->
+<img src="<?php echo base_url(); ?>assets/images/<?php echo $content->extension; ?>.png" data-src="holder.js/100px280/thumb" alt="Card image cap" style="width:300px; height:300px;">
+<br/>
+
+<a data-toggle="tooltip" data-placement="top" title="Download" href="http://localhost:2019/<%= content.file_path %>"><button class="btn btn-success"><span class="fa fa-download"></span> Download</button></a>
+<a data-toggle="tooltip" data-placement="top" title="Review or Feedback"><button class="btn btn-default" data-toggle="modal" data-target="#review"><span class="fa fa-edit"></span> Review</button></a></a>
+<a data-toggle="tooltip" data-placement="top" title="Report or Flag Content"><button class="btn btn-danger"  data-toggle="modal" data-target="#report"><span class="fa fa-flag"></span> Report</button></a></a>
+<a data-toggle="tooltip" data-placement="top" title="Download" href="http://localhost:2019/download?content=<%= content.name %>"><button class="btn btn-success"><span class="fa fa-download"></span> Download</button></a>           
+<br/><p style="margin-top:1em;"><b>Uploaded By</b> <%= content.uploader %> on <%= content.date %></p>
+</div>
+<div class="col col-md-6">
+  <!--h3 style="margin-left:1em;">Features</h3>
+  <p>
+    <?php //echo $p->features; ?>
+  </p-->
+    <h3 style="margin-left:1em;">Content Description</h3>
+<p>
+<%= content.description %>
+<% if (content.content_type == "b"){ %>
+<p>Number of Pages: <%= content.pages %></p>
+<p>ISBN: <%= content.ISBN %></p>
+<p>ISSN: <%= content.ISSN %></p>
+<p>Year of Publishing: <%= content.yop %></p>
+<% } %>
+</p>
+</div>
+        <% }) %>
+      </div>
+      </div>
+
+         
+         </div>
+
+       </section>
+       <% include footer%>
+
+  

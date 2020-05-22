@@ -1,0 +1,111 @@
+</div>
+<style>
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  width: 500px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+</style>
+</body>
+</html>
+
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/holder.min.js"></script>
+<script type="text/javascript">
+function ManageBooks(){
+               $.get(
+                  'manage_contents',
+                  { 'id': '1'},
+                  function(data) {
+                     $('#content').html(data);
+                  }
+               );
+
+}
+function Reviews(){
+               $.get(
+                  'reviews',
+                  { 'id': '1'},
+                  function(data) {
+                     $('#content').html(data);
+                  }
+               );
+
+}
+function Profile(){
+               $.get(
+                  'profile',
+                  { 'id': '1'},
+                  function(data) {
+                     $('#content').html(data);
+                  }
+               );
+
+}
+function AllBooks(){
+               $.get(
+                  'all_contents',
+                  { 'id': '1'},
+                  function(data) {
+                     $('#content').html(data);
+                  }
+               );
+
+}
+function ViewBook(id){
+               $.get(
+                  'all_contents/view/'+id,
+                  { 'id': '1'},
+                  function(data) {
+                     $('#content').html(data);
+                  }
+               );
+
+}
+function AddBooks(){
+               $.get(
+                  'add_content',
+                  { 'id': '1'},
+                  function(data) {
+                     $('#content').html(data);
+                  }
+               );
+
+}
+function Search(id){
+    window.location.href = "#"+id;
+}
+$(function () {
+  Holder.addTheme("thumb", { background: "#55595c", foreground: "#eceeef", text: "Thumbnail" });
+  });
+   </script>
